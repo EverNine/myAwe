@@ -712,6 +712,10 @@ awful.rules.rules = {
       properties = { tag = tags[1][5] } },
     { rule = { class = "net-kc-main-Main" },
       properties = { tag = tags[1][6] } },
+    { rule = { class = "Transmission" },
+      properties = { tag = tags[1][9] } },
+    { rule = { class = "Dolphin" },
+      properties = { tag = tags[1][4] } },
 }
 -- }}}
 
@@ -811,14 +815,16 @@ do
 	{ 
 		--"~/.wallpaper.sh",
 		"nm-applet",
-		"sogou-qimpanel",
+		--"sogou-qimpanel",
 		"/usr/lib/kde4/libexec/polkit-kde-authentication-agent-1",
 		"gnome-do",
-		--"~/.screen.sh",
+        "~/.screen.sh",
 		"compton",
 		"tilda",
         "kdesudo ./.auto_connect.sh",
-		"fcitx -r --enable sogou-qimpanel",
+        "fcitx",
+        --"fcitx -r --enable sogou-qimpanel",
+        --"transmission-gtk",
 	}
 	for _,i in pairs(cmds) do
 		run_once(i)
